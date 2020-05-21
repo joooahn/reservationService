@@ -1,0 +1,19 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/reservation_db?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    username: joooahn
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update # 운영시에는 validate 추천
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+
