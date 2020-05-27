@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+
 @Service
 public class ProductService {
     private CategoryRepository categoryRepository;
@@ -37,18 +39,20 @@ public class ProductService {
             if(i >= productResponse.getTotalCount()) break;
 
             Product product = new Product();
-            ProductEntity pr = prList.get(i);
+            for(ProductEntity pr : prList){
+//                prList는 set이고 categoryEntity와 productEntity는 1:1관계이므로 루프 1회만 수행
 
-            product.setProductContent(pr.getContent());
-            product.setProductDescription(pr.getDescription());
-            product.setProductId(pr.getId());
-            product.setProductImageUrl("img/"+ pr.getId() + "_th_" + pr.getProductImageEntities().get(0).getId()+".png");
+                product.setProductContent(pr.getContent());
+                product.setProductDescription(pr.getDescription());
+                product.setProductId(pr.getId());
+                product.setProductImageUrl("img/"+ pr.getId() + "_th_" + pr.getProductImageEntities().get(0).getId()+".png");
 
-            for(DisplayInfoEntity dis : pr.getDisplayInfoEntities()){
-                product.setDisplayInfoId(dis.getId());
-                product.setPlaceName(dis.getPlaceName());
+                for(DisplayInfoEntity dis : pr.getDisplayInfoEntities()){
+                    product.setDisplayInfoId(dis.getId());
+                    product.setPlaceName(dis.getPlaceName());
+                }
+                item.add(product);
             }
-            item.add(product);
         }
 
         productResponse.setItems(item);

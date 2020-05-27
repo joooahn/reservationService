@@ -19,7 +19,7 @@ public class ProductImageEntity {
     @Column(name = "file_id")
     private long fileId;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private ProductEntity productEntity;
 }

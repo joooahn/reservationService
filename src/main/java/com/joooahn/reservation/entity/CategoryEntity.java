@@ -4,6 +4,7 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name= "category")
@@ -14,6 +15,7 @@ public class CategoryEntity {
     private int id;
     @Column(name = "name")
     private String name;
+
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "categoryEntity")
     private List<ProductEntity> productEntities;

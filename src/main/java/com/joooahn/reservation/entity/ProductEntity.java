@@ -6,6 +6,10 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
 @Table(name = "product")
@@ -29,7 +33,7 @@ public class ProductEntity {
     private Date modifyDate;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private CategoryEntity categoryEntity;
 

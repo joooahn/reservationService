@@ -33,8 +33,7 @@ public class DisplayInfoEntity {
     @Column(name = "modify_date")
     String modifyDate;
 
-    // inner join 하기 위해 양방향
-    @ManyToOne(fetch=FetchType.LAZY, optional = false)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "product_id")
     private ProductEntity productEntity;
 }

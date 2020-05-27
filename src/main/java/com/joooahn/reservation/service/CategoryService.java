@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class CategoryService {
@@ -23,6 +24,8 @@ public class CategoryService {
     public CategoryResponse getCategories(){
         List<Category> item = new ArrayList<Category>();
         List<CategoryEntity> list = categoryRepository.findAll();
+        if(list == null)
+            System.out.println(1234);
 
         for(CategoryEntity it : list){
             Category category = new Category();
