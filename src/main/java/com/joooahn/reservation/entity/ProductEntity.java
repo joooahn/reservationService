@@ -4,6 +4,7 @@ import com.joooahn.reservation.model.Category;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -38,11 +39,11 @@ public class ProductEntity {
     private CategoryEntity categoryEntity;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "productEntity")
-    private List<DisplayInfoEntity> displayInfoEntities;
+    private List<DisplayInfoEntity> displayInfoEntities = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "productEntity")
-    private List<ProductImageEntity> productImageEntities;
+    private List<ProductImageEntity> productImageEntities = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "productEntity")
-    private List<PromotionEntity> promotionEntities;
+    private List<PromotionEntity> promotionEntities = new ArrayList<>();
 }

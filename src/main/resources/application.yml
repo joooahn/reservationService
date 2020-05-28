@@ -5,7 +5,7 @@ spring:
       suffix: .jsp
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/reservation?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    url: jdbc:mysql://localhost:3306/reservation_db?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
     username: joooahn
     password: 1234
   jpa:

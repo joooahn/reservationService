@@ -22,6 +22,7 @@ public class PromotionService {
 
     public PromotionResponse getPromotions(){
         List<Promotion> items = new ArrayList<>();
+
         for(PromotionEntity pm : promotionRepository.findAll()){
             Promotion promotion = new Promotion();
 

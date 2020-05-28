@@ -3,6 +3,7 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -18,5 +19,5 @@ public class CategoryEntity {
 
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "categoryEntity")
-    private List<ProductEntity> productEntities;
+    private List<ProductEntity> productEntities = new ArrayList<>();
 }

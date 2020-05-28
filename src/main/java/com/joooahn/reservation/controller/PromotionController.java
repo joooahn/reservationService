@@ -20,3 +20,4 @@ public class PromotionController {
         return promotionService.getPromotions();
     }
 }
+    
